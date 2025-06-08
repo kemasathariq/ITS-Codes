@@ -1,4 +1,4 @@
-# A03\_102\_Kemas-Muhammad-Athariq
+# A03\_102\_Kemas Muhammad Athariq
 
 *Tugas Program Komputasi Numerik Kelas A Kelompok 3 2025*
 
