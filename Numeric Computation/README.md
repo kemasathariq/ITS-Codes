@@ -1,13 +1,27 @@
+---
+
 # A03\_102\_Kemas Muhammad Athariq
 
-*Tugas Program Komputasi Numerik Kelas A Kelompok 3 2025*
+Tugas Program Komputasi Numerik 2025
+Final Project Komputasi Numerik yang dikerjakan oleh saya Kemas Muhammad Athariq sebagai salah satu anggota dari kelompok A03
 
 ---
+
+# KELOMPOK A03
+|    NRP     |      Name      |
+| :--------: | :------------: |
+| 5025241049 | Ibrahim Ferel |
+| 5025241032 | Mahendra Agung Darmawan |
+| 5025241044 | Ahmad Loka Arziki |
+| 5025241102 | Kemas Muhammad Athariq |
+| 5025241043 | Zulkarnaen Ramdhani |
+
+## Soal
+![image](https://github.com/user-attachments/assets/a4dfa22b-2a51-4c36-a2e1-cc9f388afd50)
 
 ### Bahas Fungsi Main
 
 python
-A. Variables
 f = input("Masukkan fungsi f(x) nya: ")
 f = sympify(f)
 xl = float(input("Masukkan batas bawahnya (XL): "))
@@ -15,7 +29,7 @@ xu = float(input("Masukkan batas atasnya (XU): "))
 x_real = float(input("Masukkan X sebenarnya: "))
 bagi_dua(xl, xu, x_real, f)
 
-B. Cara Kerja
+
 1. Masukkan input buat fungsinya dalam bentuk string, contoh: f = x*3 + 10*x*2 - 7*x - 196
 2. Jadikan inputan fungsi tersebut menjadi operasi matematika menggunakan sympify
 3. Input nilai (float) Xl, Xu, dan Xsebenarnya
@@ -32,7 +46,7 @@ def error_true(x_real, xr):
     return abs((x_real - xr) / x_real) * 100
 
 
-1. Untuk menemukan nilai *Error True*, yang mana nilai yang didapat dibandingkan dengan nilai variabel sebenarnya
+1. Untuk menemukan nilai Error True, yang mana nilai yang didapat dibandingkan dengan nilai variabel sebenarnya
 
 #### Fungsi error_aprox
 
@@ -41,7 +55,7 @@ def error_aprox(xr, xr_old):
     return abs((xr - xr_old) / xr) * 100 if xr != 0 else float('inf')
 
 
-1. Untuk menemukan nilai *Error Aprox*, yang mana nilai yang didapat dibandingkan dengan nilai sebelumnya
+1. Untuk menemukan nilai Error Aprox, yang mana nilai yang didapat dibandingkan dengan nilai sebelumnya
 2. Pastikan bahwa Xr != 0, jika tidak float('inf') karena angka 0 bisa menjadi pembagi
 
 ---
@@ -86,16 +100,19 @@ def bagi_dua(xl, xu, x_real, f):
         i += 1
 
 
-1. Ubah input fungsi f(x) yang masih berupa string jadi ekspresi matematika pakai simbol x.
-2. Inisialisasi xr_old = 0 buat bantu hitung error aproksimasi (Ea) di iterasi-iterasi selanjutnya.
-3. Pakai perulangan while True, dan bakal berhenti kalau nilai error true (Et) udah masuk ke range 0 sampai kurang dari 1%.
-4. Hitung nilai xr dari (xl + xu) / 2, terus dibulatkan pakai round() supaya lebih rapi.
-5. Nilai f(xl) dan f(xr) didapat dengan masukin nilai x ke fungsi f, terus dihitung pakai evalf().
-6. Et dihitung pakai fungsi error_true(), lalu dibulatkan juga.
-7. Kalau hasil kali f(xl) * f(xr) < 0, berarti akar ada di antara xl dan xr, jadi xu = xr. Kalau sebaliknya, ya xl = xr.
-8. Setiap iterasi akan ditampilin, tapi khusus iterasi pertama, nilai Ea belum bisa dihitung karena belum ada xr_old.
-9. Setelah itu, Ea dihitung pakai fungsi error_aprox() dengan parameter xr dan xr_old.
+1. Mengubah X dalam bentuk string menjadi bentuk variabel math
+2. Set Xr_old = 0, hal ini berguna untuk menentukan Ea nanti
+3. while True, dan diakhiri ketika 0 < Et < 1
+4. xr diperoleh dari (Xl + Xu) / 2, lalu dibulatkan dengan syntax round
+5. f_xl dan f_xr dimasukkan ke dalam fungsi memakai f.subs dan dihitung menggunakan evalf()
+6. Mencari Et value dengan masuk ke subfungsi Et lalu dibulatkan
+7. Kalau semisal f_xl * f_xr < 0, maka pada iterasi selanjutnya xu = xr; sebaliknya, xl = xr
+8. Selanjutnya ngeprint setiap iterasi, dan ada special case di Ea ketika index-nya masih 0
+9. Lalu cari Ea value
 10. Perbarui nilai Xr_old atau Xr sebelumnya
 11. Increment index
 
 ---
+
+## Output
+![image](https://github.com/user-attachments/assets/d7465669-0115-4159-a399-873ac928ce4d)
